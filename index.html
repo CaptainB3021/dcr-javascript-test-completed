@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country Data Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <h1>Country Data Visualization</h1>
+
+    <form id="dataForm">
+        <fieldset>
+            <legend>Sort Data:</legend>
+            <label><input type="radio" id="sortByCountry" name="sort" value="country" checked onclick="updateOptions()"> Sort By Country</label>
+            <label><input type="radio" id="sortByRegion" name="sort" value="region" onclick="updateOptions()"> Sort By Region</label>
+        </fieldset>
+        <label for="dataSelect">Select Data:</label>
+        <select id="dataSelect" onchange="updateData()">
+            <option value="population">Population size</option>
+            <option value="borders">Number of borders</option>
+            <option value="timezones">Number of timezones</option>
+            <option value="languages">Number of languages</option>
+        </select>
+    </form>
+
+    <div id="chart"></div>
+
+    <div id="table-container">
+        <table id="data-table">
+            <thead>
+                <tr></tr> 
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
